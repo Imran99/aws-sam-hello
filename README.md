@@ -1,0 +1,1 @@
+To package and deploy: npm run package ; npm run deploy
