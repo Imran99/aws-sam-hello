@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Hello world aws-sam
+Resources:
+  helloSam:
+    Properties:
+      CodeUri: s3://code123/4a2206f549073c09f4a0a9815e444de0
+      Description: Hello world
+      Environment:
+        Variables:
+          PREFIX_MESSAGE: 'Lambda says: '
+      Events:
+        MyApi:
+          Properties:
+            Method: POST
+            Path: /hello/{id}
+          Type: Api
+      Handler: restApi/hello/post/index.handler
+      MemorySize: 128
+      Runtime: nodejs4.3
+      Timeout: 10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

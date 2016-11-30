@@ -1,0 +1,14 @@
+{
+  "name": "hello-sam",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "package": "AWS_DEFAULT_PROFILE=imran-personal aws cloudformation package --template-file app.yml --output-template-file .app-out.yml --s3-bucket code123",
+    "deploy": "AWS_DEFAULT_PROFILE=imran-personal aws cloudformation deploy --template-file .app-out.yml --stack-name hello-sam --capabilities CAPABILITY_IAM"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
